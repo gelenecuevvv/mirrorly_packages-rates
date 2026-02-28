@@ -405,6 +405,7 @@ img {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Same physical size: portrait 4×6 (72×108px), landscape 6×4 (108×72px) */
 .layout-two-frames.layout-portrait .frame-1,
 .layout-two-frames.layout-portrait .frame-2 {
   max-width: 72px;
@@ -412,7 +413,7 @@ img {
 
 .layout-two-frames.layout-landscape .frame-1,
 .layout-two-frames.layout-landscape .frame-2 {
-  max-width: 80px;
+  max-width: 108px; /* 6" side = same scale as portrait 4" = 72px → 6" = 108px */
 }
 
 .layout-two-frames.layout-polaroid .frame-1 {
@@ -424,6 +425,7 @@ img {
   margin-left: -8px;
 }
 
+/* 4R = 4×6 in: portrait 4×6 (2:3), landscape 6×4 (3:2) */
 .layout-frame {
   background: var(--white-pure);
   border: 3px solid var(--gray-mid);
@@ -431,14 +433,25 @@ img {
   padding: 8px;
   width: 100%;
   max-width: 140px;
-  aspect-ratio: 3/4;
+  aspect-ratio: 2/3; /* 4R portrait: 4" × 6" */
   display: flex;
   flex-direction: column;
 }
 
 .layout-frame.landscape {
-  aspect-ratio: 4/3;
+  aspect-ratio: 3/2; /* 4R landscape: 6" × 4" */
   max-width: 160px;
+  padding: 6px 8px;
+}
+
+.layout-frame.landscape .layout-single,
+.layout-frame.landscape .layout-grid-4 {
+  flex: 1;
+  min-height: 32px;
+}
+
+.layout-frame.landscape .frame-footer {
+  margin-top: 2px;
 }
 
 .frame-footer {
