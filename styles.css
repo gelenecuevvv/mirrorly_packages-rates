@@ -173,8 +173,24 @@ img {
 .hero-content {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 2rem;
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.hero-content .hero-logo,
+.hero-content .hero-divider,
+.hero-content .hero-tagline,
+.hero-content .hero-events,
+.hero-content .hero-scroll {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-title {
@@ -423,15 +439,16 @@ img {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Same physical size: portrait 4×6 (72×108px), landscape 6×4 (108×72px) */
+/* Same physical size: portrait 4×6, landscape 6×4 */
 .layout-two-frames.layout-portrait .frame-1,
 .layout-two-frames.layout-portrait .frame-2 {
-  max-width: 72px;
+  max-width: 92px;
 }
 
+/* Same scale as portrait: portrait 92×138px → landscape 138×92px */
 .layout-two-frames.layout-landscape .frame-1,
 .layout-two-frames.layout-landscape .frame-2 {
-  max-width: 108px; /* 6" side = same scale as portrait 4" = 72px → 6" = 108px */
+  max-width: 138px;
 }
 
 .layout-two-frames.layout-polaroid .frame-1 {
@@ -535,21 +552,23 @@ img {
   align-items: center;
 }
 
+/* Photo strips: narrow and tall */
 .layout-strip {
-  width: 52px;
+  width: 50px;
+  min-height: 108px;
   background: var(--white-pure);
   border: 3px solid var(--gray-mid);
   border-radius: 4px;
   padding: 6px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   flex-shrink: 0;
 }
 
 .layout-strip span {
   flex: 1;
-  min-height: 24px;
+  min-height: 28px;
   background: var(--gray-mid);
   border-radius: 2px;
 }
@@ -557,7 +576,7 @@ img {
 .polaroid-frame {
   background: var(--white-pure);
   border: 2px solid var(--gray-mid);
-  padding: 6px 6px 18px;
+  padding: 6px 6px 20px;
   border-radius: 2px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   display: flex;
@@ -566,11 +585,11 @@ img {
   max-width: 64px;
 }
 
-/* Same size for both polaroid frames in layout */
+/* Polaroid: same scale as 4R — width ~92px (match portrait short side), square photo + thick bottom */
 .layout-two-frames.layout-polaroid .polaroid-frame {
-  width: 56px;
-  max-width: 56px;
-  padding: 4px 4px 14px;
+  width: 68px;
+  max-width: 68px;
+  padding: 5px 5px 16px;
 }
 
 .polaroid-photo {
@@ -581,9 +600,8 @@ img {
   border-radius: 2px;
 }
 
-/* Larger gray square in layout polaroids (less padding = more photo area) */
 .layout-two-frames .polaroid-photo {
-  max-width: 48px;
+  max-width: none;
 }
 
 .polaroid-footer {
