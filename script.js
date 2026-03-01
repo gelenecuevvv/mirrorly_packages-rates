@@ -58,13 +58,59 @@
     });
   }
 
+  function initScrollAnimations() {
+    var mobileQuery = window.matchMedia('(max-width: 768px)');
+    var animatedSelectors = [
+      '.section-header',
+      '.package-card',
+      '.addons-card',
+      '.inclusions-card',
+      '.layout-card',
+      '.booth-card',
+      '.booking-step-card'
+    ];
+
+    function runObserver() {
+      var elements = [];
+      animatedSelectors.forEach(function (sel) {
+        document.querySelectorAll(sel).forEach(function (el) {
+          elements.push(el);
+        });
+      });
+      if (!elements.length) return;
+
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('scroll-in');
+            }
+          });
+        },
+        { root: null, rootMargin: '0px 0px -8% 0px', threshold: 0.1 }
+      );
+
+      elements.forEach(function (el) {
+        el.classList.add('scroll-animate');
+        observer.observe(el);
+      });
+    }
+
+    if (mobileQuery.matches) runObserver();
+    mobileQuery.addEventListener('change', function () {
+      if (mobileQuery.matches && !document.querySelector('.scroll-animate')) runObserver();
+    });
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
       initMobileMenu();
       initSmoothScroll();
+      initScrollAnimations();
     });
   } else {
     initMobileMenu();
     initSmoothScroll();
+    initScrollAnimations();
   }
 })();
