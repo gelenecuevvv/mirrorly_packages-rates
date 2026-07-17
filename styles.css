@@ -324,7 +324,7 @@ img {
   justify-content: center;
   gap: 0.35rem;
   width: 210px;
-  padding: 13px 0;
+  padding: 14px 0;
   background: var(--white-pure);
   color: var(--black);
   font-size: 0.78rem;
@@ -339,8 +339,8 @@ img {
 }
 
 .package-badge-star {
-  width: 0.95rem;
-  height: 0.95rem;
+  width: 1.15rem;
+  height: 1.15rem;
   flex-shrink: 0;
   color: #f5c518;
   display: block;
