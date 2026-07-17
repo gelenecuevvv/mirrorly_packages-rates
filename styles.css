@@ -279,11 +279,12 @@ img {
 }
 
 .package-card {
+  position: relative;
   background: var(--gray-dark);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   padding: 2rem;
-  transition: transform var(--transition), border-color var(--transition);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
 .package-card:hover {
@@ -292,8 +293,36 @@ img {
 }
 
 .package-featured {
-  border-color: rgba(255, 255, 255, 0.2);
-  background: var(--black-soft);
+  border-color: rgba(255, 255, 255, 0.35);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, var(--black-soft) 100%);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  transform: scale(1.02);
+}
+
+.package-featured:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.02) translateY(-4px);
+}
+
+.package-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.75rem;
+  background: var(--white-pure);
+  color: var(--black);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+}
+
+.package-badge-star {
+  width: 0.9rem;
+  height: 0.9rem;
+  flex-shrink: 0;
 }
 
 .package-icon {
@@ -1065,6 +1094,15 @@ img {
 
   .packages-grid {
     grid-template-columns: 1fr;
+  }
+
+  .package-featured {
+    transform: none;
+    order: -1;
+  }
+
+  .package-featured:hover {
+    transform: translateY(-4px);
   }
 
   .layouts-grid {
