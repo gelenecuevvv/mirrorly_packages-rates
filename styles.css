@@ -306,44 +306,54 @@ img {
 
 .package-badge-wrap {
   position: absolute;
-  top: -1px;
-  right: -1px;
-  width: 96px;
-  height: 96px;
+  top: 0;
+  right: 0;
+  width: 118px;
+  height: 118px;
   overflow: hidden;
   pointer-events: none;
   z-index: 2;
   border-radius: 0 12px 0 0;
 }
 
-.package-badge {
+.package-badge-ribbon {
   position: absolute;
-  top: 20px;
-  right: -34px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
-  width: 140px;
-  margin: 0;
-  padding: 0.45rem 0;
+  top: 22px;
+  right: -38px;
+  width: 158px;
+  height: 26px;
   background: var(--white-pure);
-  color: var(--black);
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  line-height: 1;
-  text-align: center;
   transform: rotate(45deg);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
+.package-badge-label {
+  position: absolute;
+  top: 29px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  width: 118px;
+  margin-left: -59px;
+  color: var(--black);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+  transform: rotate(45deg);
+  transform-origin: center center;
+}
+
 .package-badge-star {
-  width: 0.65rem;
-  height: 0.65rem;
+  width: 0.58rem;
+  height: 0.58rem;
   flex-shrink: 0;
   color: #f5c518;
+  display: block;
 }
 
 .package-icon {
