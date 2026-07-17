@@ -323,6 +323,7 @@ img {
   width: 0.9rem;
   height: 0.9rem;
   flex-shrink: 0;
+  color: #f5c518;
 }
 
 .package-icon {
