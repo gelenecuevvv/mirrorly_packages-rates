@@ -308,49 +308,39 @@ img {
   position: absolute;
   top: 0;
   right: 0;
-  width: 118px;
-  height: 118px;
+  width: 145px;
+  height: 145px;
   overflow: hidden;
   pointer-events: none;
   z-index: 2;
-  border-radius: 0 12px 0 0;
 }
 
-.package-badge-ribbon {
+.package-badge {
   position: absolute;
-  top: 22px;
-  right: -38px;
-  width: 158px;
-  height: 26px;
-  background: var(--white-pure);
-  transform: rotate(45deg);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-}
-
-.package-badge-label {
-  position: absolute;
-  top: 29px;
-  left: 50%;
+  top: 36px;
+  right: -54px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
-  width: 118px;
-  margin-left: -59px;
+  gap: 0.35rem;
+  width: 210px;
+  padding: 13px 0;
+  background: var(--white-pure);
   color: var(--black);
-  font-size: 0.58rem;
+  font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   line-height: 1;
   white-space: nowrap;
   transform: rotate(45deg);
   transform-origin: center center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .package-badge-star {
-  width: 0.58rem;
-  height: 0.58rem;
+  width: 0.75rem;
+  height: 0.75rem;
   flex-shrink: 0;
   color: #f5c518;
   display: block;
